@@ -2,7 +2,7 @@
     "type": "sqlite",
     "database": "./src/database/datase.sqlite",
     "migrations": [
-        "./src/databse/migrations/**.ts"
+        "./src/database/migrations/**.ts"
     ],
     "entities": [
         "./src/entities/**.ts"
