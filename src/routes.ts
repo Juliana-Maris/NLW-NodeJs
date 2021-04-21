@@ -1,20 +1,11 @@
 import { Router } from "express";
-import { getCustomRepository } from "typeorm";
+import { SettingsController } from "./constrollers/SettingsController";
 
-import { SettingsRepository } from "./repositories/Settingsrepository";
 
 const routes = Router();
 
-routes.post("/settings", async (request, response) => {
-    const { chat, username } = request.body;
-    const settingsRepository = getCustomRepository(SettingsRepository);
-    // para criar objeto dentro de uma tabela
-    const settings = settingsRepository.create({
-        chat,
-        username
-    })
-    await settingsRepository.save(settings);
-    return response.json(settings);
-})
+const settingsController = new SettingsController();
+
+routes.post("/settings", settingsController.create);
 
 export { routes }
