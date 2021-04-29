@@ -3,7 +3,7 @@ let emailUser = null;
 let socket = null;
 
 document.querySelector("#start_chat").addEventListener("click", (event) => {
-    const socket = io();
+    socket = io(); // colocar const antes ou não???
     const chat_help = document.getElementById("chat_help");
     chat_help.style.display = "none";
 
@@ -58,9 +58,9 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
 document.querySelector("#send_message_button").addEventListener("click", (event) => {
     const text = document.getElementById("message_user");
     const params = {
-        text: text.value, // meu deu certo só com text, ????
+        text: text.value, // meu deu certo só com text, ???? 
         socket_admin_id,
-    }
+    };
     socket.emit("client_send_to_admin", params);
     //para mensagem voltar para janela do client
     const template_client = document.getElementById("message-user-template").innerHTML;

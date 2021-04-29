@@ -53,7 +53,7 @@ io.on("connect", socket => {
     socket.on("client_send_to_admin", async params => {
         const { text, socket_admin_id } = params;
         const socket_id = socket.id;
-        const { user_id } = await connectionsService.findBySocketID(socket_id) // erro aqui?
+        const { user_id } = await connectionsService.findBySocketID(socket_id); // erro aqui?
         const message = await messagesService.create({
             text,
             user_id,
