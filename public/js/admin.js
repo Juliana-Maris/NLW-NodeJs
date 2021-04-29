@@ -1,6 +1,6 @@
 const socket = io();
 let connectionsUsers = [];
-let connectionInSupport = []; // erro aqui???
+let connectionInSupport = []; 
 
 socket.on("admin_list_all_users", (connections) => {
     connectionsUsers = connections;
@@ -18,7 +18,7 @@ function call(id) {
     const connection = connectionsUsers.find(
         (connection) => connection.socket_id === id);
 
-    connectionInSupport.push(connection); // acrescentei isto na correção
+    connectionInSupport.push(connection); 
 
     const template = document.getElementById("admin_template").innerHTML;
     const rendered = Mustache.render(template, {
@@ -57,7 +57,7 @@ function call(id) {
     });
 }
 function sendMessage(id) {
-    const text = document.getElementById(`send_message_${id}`); // aqui com s???
+    const text = document.getElementById(`send_message_${id}`); 
     const params = {
         text: text.value,
         user_id: id,
