@@ -24,7 +24,7 @@ const http = createServer(app); // criar protocolo HTTP
 const io = new Server(http); // cria protocolo de WS
 
 io.on("connection", (socket: Socket) => {
-    //console.log("se conectou", socket.id); foi usado só pra teste
+    console.log("se conectou", socket.id); // foi usado só pra teste
 });
 
 app.use(express.json());

@@ -20,7 +20,6 @@ class SettingsService {
         if (userAlreadyExists) {
             throw new Error("Usuario já existe!");
         }
-
         // para criar objeto dentro de uma tabela
         const settings = this.settingsRepository.create({
             chat,
@@ -35,11 +34,10 @@ class SettingsService {
         });
         return settings;
     }
+    // tinha const settings = antes do await abaixo
     async update(username: string, chat: boolean) {
         const settings = await this.settingsRepository.createQueryBuilder().update(Setting)
-            .set({ chat }).where("username = :username", {
-                username
-            }).execute();
+            .set({ chat }).where("username = :username", { username }).execute();
     }
 }
 export { SettingsService };

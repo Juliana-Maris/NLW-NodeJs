@@ -294,8 +294,9 @@ input[type="text"]:focus {
 }
 
 .admin_message_admin {
+  
   width: 300px;
-  background: #e0e0e0;
+  background: #dab9f5;
   padding: 10px;
   margin: 12px;
   display: flex;
